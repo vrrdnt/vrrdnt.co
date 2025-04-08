@@ -47,3 +47,7 @@ showPostsSummary = true
     title = "GitHub"
     url = "https://github.com/vrrdnt"
     weight = 4
+
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
