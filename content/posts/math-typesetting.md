@@ -4,6 +4,7 @@ title: Math Typesetting
 date: 2024-12-27
 description: A brief guide to setup KaTeX
 math: true
+draft: true
 summary: This is an example post with math notations.
 ---
 
