@@ -6,9 +6,9 @@ draft = false
 
 👋🏻 welcome to my website!
 
-i’m a cable dawg in the US Air Force and i love computers.
+i’m a cable dawg in the US Air Force. previously, i’ve worked in IT, system administration, and a bunch of warehouses.
 
-i’m using this site to write articles explaining different aspects of the things i do with them.
+i’m using this site to write articles explaining different aspects of the things i do with computers.
 
 you can reach out me to me at [will.arctic@gmail.com](mailto:will.arctic@gmail.com).
 
