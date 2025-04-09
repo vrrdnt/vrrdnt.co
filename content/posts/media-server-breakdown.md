@@ -1,7 +1,7 @@
 +++
 date = '2025-04-08T23:51:11+09:00'
 title = 'Media Server Breakdown'
-description: "An architectural deep dive into the inner workings of a self-hosted, automated media server stack powered by Plex and the *arr family of tools."
+description = 'An architectural deep dive into the inner workings of a self-hosted, automated media server stack powered by Plex and the *arr family of tools.'
 +++
 
 If you've ever wondered how an automated media server works behind the scenes, this post breaks down the full architecture of a remote **Plex server** powered by the *arr ecosystem.
