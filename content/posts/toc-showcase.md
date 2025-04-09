@@ -2,6 +2,7 @@
 title: "Hugo Table of Contents showcase"
 description: Here is a demo of the Table of Contents.
 date: 2025-03-13
+draft: true
 keywords: ["gohugo", "hugo", "go", "blog"]
 tags: ["hugo", "themes"]
 summary: This post shows the default Hugo Table of Contents and how not-much handle it.
