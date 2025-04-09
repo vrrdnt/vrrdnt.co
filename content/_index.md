@@ -1,7 +1,7 @@
 ---
-lead: "Basic, simple and minimal Hugo theme"
+lead: "posts and documentation about computer stuff"
 ---
 
-This is a demo of the `not-much` theme, built with Hugo, and is intended to be trouble-free. Explore it to see what `not-much` has to offer.
+i write about computers and technology. most of it is documentation and explanation of programs and services i use.
 
-💡 Check the [about page](./about) to learn more about this theme.
+💡 check the [about page](./about) to read about me.
