@@ -15,7 +15,7 @@ copyright = "vrrdnt © {year}"
 [params]
 theme = "dark"
 palette = "dracula"
-showThemeNotice = true
+showThemeNotice = false
 showPostsSummary = true
 
 # Navigation
