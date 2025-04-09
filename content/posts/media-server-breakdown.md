@@ -68,6 +68,7 @@ When hosted remotely (on a VPS, dedicated server, or cloud box), there are some 
 ---
 
 ## Diagram (Text-Based)
+```
 [Sonarr/Radarr/Lidarr]
 |
 v
@@ -84,6 +85,7 @@ v
 |
 v
 [End User Streaming]
+```
 
 Each arrow represents an API call, file operation, or polling loop. The key is automation: once configured, this entire loop runs without human input.
 
