@@ -14,49 +14,7 @@
       <link>http://localhost:1313/posts/media-server-breakdown/</link>
       <pubDate>Tue, 08 Apr 2025 23:51:11 +0900</pubDate>
       <guid>http://localhost:1313/posts/media-server-breakdown/</guid>
-      <description>&lt;h2 id=&#34;this-is-a-test-post&#34;&gt;This is a test post.&lt;/h2&gt;&#xA;&lt;p&gt;Hello! &lt;strong&gt;Hello.&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;console.log(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;hello!&amp;#39;&lt;/span&gt;);&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
-    </item>
-    <item>
-      <title>Draft sample post</title>
-      <link>http://localhost:1313/posts/draft-sample-post/</link>
-      <pubDate>Thu, 03 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/draft-sample-post/</guid>
-      <description>This is an example draft post with a very short content.</description>
-    </item>
-    <item>
-      <title>Hugo Table of Contents showcase</title>
-      <link>http://localhost:1313/posts/toc-showcase/</link>
-      <pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/toc-showcase/</guid>
-      <description>This post shows the default Hugo Table of Contents and how not-much handle it.</description>
-    </item>
-    <item>
-      <title>Hugo shortcodes</title>
-      <link>http://localhost:1313/posts/hugo-shortcodes/</link>
-      <pubDate>Fri, 27 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/hugo-shortcodes/</guid>
-      <description>This post shows the default Hugo shortcodes and how they are rendered.</description>
-    </item>
-    <item>
-      <title>Math Typesetting</title>
-      <link>http://localhost:1313/posts/math-typesetting/</link>
-      <pubDate>Fri, 27 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/math-typesetting/</guid>
-      <description>This is an example post with math notations.</description>
-    </item>
-    <item>
-      <title>Markdown Syntax Guide</title>
-      <link>http://localhost:1313/posts/markdown-syntax-guide/</link>
-      <pubDate>Sat, 14 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/markdown-syntax-guide/</guid>
-      <description>This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.</description>
-    </item>
-    <item>
-      <title>Welcome To not-much</title>
-      <link>http://localhost:1313/posts/example-post/</link>
-      <pubDate>Mon, 18 Mar 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/example-post/</guid>
-      <description>This is an example post with a very short content and a single header.</description>
+      <description>&lt;p&gt;If you&amp;rsquo;ve ever wondered how an automated media server works behind the scenes, this post breaks down the full architecture of a remote &lt;strong&gt;Plex server&lt;/strong&gt; powered by the *arr ecosystem.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-big-picture&#34;&gt;The Big Picture&lt;/h2&gt;&#xA;&lt;p&gt;At its core, a remote Plex server setup is a &lt;strong&gt;pipeline&lt;/strong&gt; that begins with content discovery and ends with media streaming. Think of it like a digital supply chain:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;Discovery&lt;/strong&gt; – Find new content.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Acquisition&lt;/strong&gt; – Download the content.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Processing&lt;/strong&gt; – Organize and clean up the files.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Delivery&lt;/strong&gt; – Serve it to users via Plex.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;Each part of this chain is handled by a specialized service.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

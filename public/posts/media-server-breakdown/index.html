@@ -9,8 +9,7 @@
 <meta property="og:url" content="http://localhost:1313/posts/media-server-breakdown/">
   <meta property="og:site_name" content="vrrdnt">
   <meta property="og:title" content="Media Server Breakdown">
-  <meta property="og:description" content="This is a test post. Hello! Hello.
-console.log(&#39;hello!&#39;);">
+  <meta property="og:description" content="An architectural deep dive into the inner workings of a self-hosted, automated media server stack powered by Plex and the *arr family of tools.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -87,26 +86,90 @@ console.log(&#39;hello!&#39;);">
             
             
             <li class="breadcrumb-item small">
-              1 minutes
+              3 minutes
             </li>
           </ol>
         </div>
       </header>
       <article>
-        <h2 id="this-is-a-test-post">This is a test post.</h2>
-<p>Hello! <strong>Hello.</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>console.log(<span style="color:#f1fa8c">&#39;hello!&#39;</span>);
-</span></span></code></pre></div>
+        <p>If you&rsquo;ve ever wondered how an automated media server works behind the scenes, this post breaks down the full architecture of a remote <strong>Plex server</strong> powered by the *arr ecosystem.</p>
+<h2 id="the-big-picture">The Big Picture</h2>
+<p>At its core, a remote Plex server setup is a <strong>pipeline</strong> that begins with content discovery and ends with media streaming. Think of it like a digital supply chain:</p>
+<ol>
+<li><strong>Discovery</strong> – Find new content.</li>
+<li><strong>Acquisition</strong> – Download the content.</li>
+<li><strong>Processing</strong> – Organize and clean up the files.</li>
+<li><strong>Delivery</strong> – Serve it to users via Plex.</li>
+</ol>
+<p>Each part of this chain is handled by a specialized service.</p>
+<hr>
+<h2 id="components--their-roles">Components &amp; Their Roles</h2>
+<h3 id="plex-media-server"><strong>Plex Media Server</strong></h3>
+<p>Plex is the front-end. It’s what users interact with to stream their media. It maintains a database of metadata, watch history, posters, and handles transcoding when needed. It has no awareness of how media arrives — it just watches folders.</p>
+<h3 id="arr-applications">*<strong>arr Applications</strong></h3>
+<p>This is the automation brain. Each tool in the *arr stack is a scheduler, organizer, and metadata handler for a specific media type:</p>
+<ul>
+<li><strong>Sonarr</strong> – Automates TV shows.</li>
+<li><strong>Radarr</strong> – Automates movies.</li>
+<li><strong>Lidarr</strong> – Handles music.</li>
+<li><strong>Bazarr</strong> – Fetches subtitles.</li>
+</ul>
+<p>These tools regularly check for missing or upcoming content, using your filters (e.g. 1080p only, English audio, etc.), and pass search requests to your indexers via <strong>Jackett</strong> or <strong>Prowlarr</strong>.</p>
+<h3 id="jackett--prowlarr"><strong>Jackett / Prowlarr</strong></h3>
+<p>These are indexer proxies. They translate *arr requests into something torrent and usenet indexers understand. Think of them like multi-lingual brokers that speak both Sonarr and BitTorrent fluently.</p>
+<ul>
+<li><strong>Jackett</strong> is older and widely used for torrent indexers.</li>
+<li><strong>Prowlarr</strong> is newer, designed as a unified indexer manager for all *arrs.</li>
+</ul>
+<h3 id="download-clients"><strong>Download Clients</strong></h3>
+<p>Once a release is found, it&rsquo;s passed to your download client:</p>
+<ul>
+<li><strong>qBittorrent</strong>, <strong>Deluge</strong>, or <strong>Transmission</strong> (for torrents)</li>
+<li><strong>NZBGet</strong> or <strong>SABnzbd</strong> (for Usenet)</li>
+</ul>
+<p>These tools download the media to a specified directory.</p>
+<h3 id="file-handling--renaming"><strong>File Handling &amp; Renaming</strong></h3>
+<p>Once downloaded, *arr tools move the files, rename them according to your naming convention, and place them in Plex’s monitored folders. Plex then scans the new content and adds it to the library.</p>
+<p>No manual dragging, renaming, or tagging. The entire flow is event-driven.</p>
+<hr>
+<h2 id="remote-architecture-considerations">Remote Architecture Considerations</h2>
+<p>When hosted remotely (on a VPS, dedicated server, or cloud box), there are some architectural quirks:</p>
+<ul>
+<li><strong>Shared Storage</strong> – All containers or apps must share access to the same volume (e.g. <code>/media/</code>).</li>
+<li><strong>Persistent Volumes</strong> – Docker volumes or bind mounts are used so data persists across container updates.</li>
+<li><strong>Reverse Proxy</strong> – Nginx or Traefik routes traffic to web UIs securely (e.g. Sonarr at <code>sonarr.yourdomain.com</code>).</li>
+<li><strong>VPN/Privacy</strong> – Download clients are often routed through a VPN container (e.g. <code>gluetun</code>) to avoid exposing your IP.</li>
+<li><strong>Remote Plex Access</strong> – Port forwarding or Plex Relay enables you to stream from anywhere.</li>
+</ul>
+<hr>
+<h2 id="diagram-text-based">Diagram (Text-Based)</h2>
+<pre tabindex="0"><code>[Sonarr/Radarr/Lidarr]
+|
+v
+[Jackett/Prowlarr]
+|
+v
+[qBittorrent/NZBGet/SABnzbd]
+|
+v
+[Media Files]
+|
+v
+[Plex]
+|
+v
+[End User Streaming]
+</code></pre><p>Each arrow represents an API call, file operation, or polling loop. The key is automation: once configured, this entire loop runs without human input.</p>
+<hr>
+<h2 id="conclusion">Conclusion</h2>
+<p>A remote Plex server with the *arr stack is a beautiful example of composable, event-driven architecture. Each tool does one thing well, and when orchestrated together — usually via Docker — they form an intelligent, self-updating content delivery system.</p>
+<p>It’s not just a media server. It’s your personal Netflix, powered by APIs and containers.</p>
+
       </article>
       
 
       <div class="row">
     <div class="col-md">
-        
-        <a href="http://localhost:1313/posts/draft-sample-post/">
-            <span>previous: </span>
-            <span>Draft sample post</span>
-        </a>
         
     </div>
     <div class="col-md text-md-end">
@@ -119,8 +182,6 @@ console.log(&#39;hello!&#39;);">
     <div class="container mt-4 pb-1">
     <p class="small opacity-75">
         vrrdnt © 2025
-        
-        // powered by <a href="https://gohugo.io/">hugo</a> and <a href="https://github.com/imgios/not-much">imgios/not-much</a>
         
     </p>
 </div>
