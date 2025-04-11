@@ -6,7 +6,7 @@ description = 'an overview into how i run a media server'
 
 ## The Basics
 
-Starting from the point-of-view of a Plex user, I'm going to go through how each step of the process of requesting media to streaming it works.
+Starting from the point-of-view of a Plex user, I'm going to go through how each step of the process of requesting media to streaming and how it works.
 
 When you watchlist something on Plex, a program called Overseerr picks the request up. Media (movies and TV shows) all have IMDB IDs, which are unique identifiers for each piece of media assigned by IMDB. Overseerr uses these IDs to find the media on other services I'm running called Radarr (for movies) and Sonarr (for TV shows). These services are responsible for downloading the media using either torrents or through a protocol called Usenet.
 
