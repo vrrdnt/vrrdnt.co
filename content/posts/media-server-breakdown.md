@@ -30,7 +30,7 @@ Both Plex and Overseer have ways you can report issues with downloaded media.
 
 In Plex, you can look for a button that looks like three dots next to the media you're watching. Click on it, and you should see a button that says "Report Issues". This will take you to a page where you can describe any problems with the media, such as missing subtitles or bad audio.
 
-In Overseerr, it's a similar process. Go to the media, and you'll see a yellow hazard button on the screen. Click it, and small window will open that will let you describe the issue in the same way as Plex.
+In Overseerr, it's a similar process. Go to the media, and you'll see a yellow hazard button on the screen. Click it, and a small window will open that will let you describe the issue in the same way as Plex.
 
 #### Notes
 
