@@ -20,7 +20,7 @@ Once the whole download process is completed, Sonarr and Radarr tell Plex to sca
 
 ## Requesting specific/partial media
 
-Overseerr has a feature that allows you to request specific media. This is useful if you want to watch a specific episode of a show, or a specific version of a movie (like the extended cut). When you go to the Overseerr request website [overseerr.vrrdnt.co](https://overseerr.vrrdnt.co) and search for a show, you can request a specific season or episode -- this is useful for avoiding downloading the entirety of a show when you only want the latest season or something like that.
+Overseerr has a feature that allows you to request specific media. This is useful if you want to watch a specific episode of a show, or a specific version of a movie (like the extended cut). When you go to the Overseerr request website [overseerr.vrrdnt.co](https://overseerr.vrrdnt.co) ( <— tap this link to go to Overseerr) and search for a show, you can request a specific season or episode -- this is useful for avoiding downloading the entirety of a show when you only want the latest season or something like that.
 
 Make sure you don't have the show you're partially requesting on your Plex watchlist -- Overseerr will interpret this as a request for the entire show.
 
