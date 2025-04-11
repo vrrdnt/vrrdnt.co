@@ -34,7 +34,4 @@ In Overseerr, it's a similar process. Go to the media, and you'll see a yellow h
 
 #### Notes
 
-```
-I think this is everything -- I'd like to write a more technical description of how the server works and include images to things I talk about here, which I'll do soon.
-identifiers you think anything should be added or explained, please let me know!
-```
+I think this is everything — I’d like to write a more technical description of how the server works and include images to things I talk about here, which I’ll do soon.
