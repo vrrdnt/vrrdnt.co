@@ -2,6 +2,7 @@
 date = '2025-04-08T23:51:11+09:00'
 title = 'Media Server Breakdown'
 description = 'an overview into how i run a media server'
+draft = true
 +++
 
 ## The Basics
